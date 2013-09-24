@@ -5,26 +5,26 @@ module NfePaulistana
     Savon.configure do |config|
       config.soap_version = 2
     end
-    Savon.env_namespace = :soap
+    Savon.config.env_namespace = :soap
 
     METHODS = {
-      envio_rps: "EnvioRPSRequest",
-      envio_lote_rps: "EnvioLoteRPSRequest",
-      teste_envio_lote_rps: "TesteEnvioLoteRPSRequest",
-      cancelamento_n_fe: "CancelamentoNFeRequest",
-      consulta_cnpj: "ConsultaCNPJRequest",
-      consulta_n_fe: "ConsultaNFeRequest",
-      consulta_n_fe_recebidas: "ConsultaNFeRecebidasRequest",
-      consulta_n_fe_emitidas: "ConsultaNFeEmitidasRequest",
-      consulta_lote: "ConsultaLoteRequest",
-      consulta_informacoes_lote: "ConsultaInformacoesLoteRequest"
+      :envio_rps => "EnvioRPSRequest",
+      :envio_lote_rps => "EnvioLoteRPSRequest",
+      :teste_envio_lote_rps => "TesteEnvioLoteRPSRequest",
+      :cancelamento_n_fe => "CancelamentoNFeRequest",
+      :consulta_cnpj => "ConsultaCNPJRequest",
+      :consulta_n_fe => "ConsultaNFeRequest",
+      :consulta_n_fe_recebidas => "ConsultaNFeRecebidasRequest",
+      :consulta_n_fe_emitidas => "ConsultaNFeEmitidasRequest",
+      :consulta_lote => "ConsultaLoteRequest",
+      :consulta_informacoes_lote => "ConsultaInformacoesLoteRequest"
     }
 
     def initialize(options = {})
       @options = {
-        cert_path: "", 
-        cert_pass: "",
-        wdsl: 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
+        :cert_path => "",
+        :cert_pass => "",
+        :wdsl => 'https://nfe.prefeitura.sp.gov.br/ws/lotenfe.asmx?wsdl'
       }.merge(options)
     end
 
@@ -86,7 +86,7 @@ module NfePaulistana
         soap.version = 2
       end
       method_response = (method.to_s + "_response").to_sym
-      Response.new(xml: response.to_hash[method_response][:retorno_xml], method: method)
+      Response.new(:xml => response.to_hash[method_response][:retorno_xml], :method  => method)
     rescue Savon::Error => error
     end
 

@@ -1,12 +1,12 @@
 module NfePaulistana
   class Response
     RETURN_ROOT = {
-      teste_envio_lote_rps: :envio_lote_rps,
-      consulta_n_fe: :consulta,
-      consulta_n_fe_emitidas: :consulta,
-      consulta_n_fe_recebidas: :consulta,
-      consulta_lote: :consulta,
-      consulta_informacoes_lote: :informacoes_lote,
+      :teste_envio_lote_rps => :envio_lote_rps,
+      :consulta_n_fe => :consulta,
+      :consulta_n_fe_emitidas => :consulta,
+      :consulta_n_fe_recebidas => :consulta,
+      :consulta_lote => :consulta,
+      :consulta_informacoes_lote => :informacoes_lote,
     }
     def initialize(options = {})
       @options = options

@@ -12,7 +12,7 @@ module NfePaulistana
   Savon.configure do |config|
     config.soap_version = 2
   end
-  Savon.env_namespace = :soap
+  Savon.config.env_namespace = :soap
 
   def self.enviar(data = {})
     certificado = OpenSSL::PKCS12.new(File.read(data[:cert_path]), data[:cert_pass]) 
@@ -29,7 +29,7 @@ module NfePaulistana
 
         soap.version = 2
       end
-      Response.new(xml: response.to_hash[:envio_rps_response][:retorno_xml], method: :envio_rps_response)
+      Response.new(:xml => response.to_hash[:envio_rps_response][:retorno_xml], :method => :envio_rps_response)
     rescue Savon::Error => error
     end
   end

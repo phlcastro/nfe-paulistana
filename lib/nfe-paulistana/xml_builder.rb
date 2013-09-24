@@ -2,16 +2,16 @@ module NfePaulistana
   class XmlBuilder
 
     METHODS = {
-      envio_rps: "PedidoEnvioRPS",
-      envio_lote_rps: "PedidoEnvioLoteRPS",
-      teste_envio_lote_rps: "PedidoEnvioLoteRPS",
-      cancelamento_n_fe: "PedidoCancelamentoNFe",
-      consulta_n_fe: "PedidoConsultaNFe",
-      consulta_n_fe_recebidas: "PedidoConsultaNFePeriodo",
-      consulta_n_fe_emitidas: "PedidoConsultaNFePeriodo",
-      consulta_lote: "PedidoConsultaLote",
-      consulta_informacoes_lote: "PedidoInformacoesLote",
-      consulta_cnpj: "PedidoConsultaCNPJ"
+      :envio_rps => "PedidoEnvioRPS",
+      :envio_lote_rps => "PedidoEnvioLoteRPS",
+      :teste_envio_lote_rps => "PedidoEnvioLoteRPS",
+      :cancelamento_n_fe => "PedidoCancelamentoNFe",
+      :consulta_n_fe => "PedidoConsultaNFe",
+      :consulta_n_fe_recebidas => "PedidoConsultaNFePeriodo",
+      :consulta_n_fe_emitidas => "PedidoConsultaNFePeriodo",
+      :consulta_lote => "PedidoConsultaLote",
+      :consulta_informacoes_lote => "PedidoInformacoesLote",
+      :consulta_cnpj => "PedidoConsultaCNPJ"
     }
 
     DEFAULT_DATA = {
