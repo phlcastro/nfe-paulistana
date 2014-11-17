@@ -241,7 +241,7 @@ module NfePaulistana
             xml.CEP data[:cep] unless data[:cep]
           }
         end
-        xml.EmailTomador data[:email_tomador]
+        #xml.EmailTomador data[:email_tomador]
         xml.Discriminacao data[:discriminacao]
       }
     end
